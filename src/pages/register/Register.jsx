@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { AuthContext } from "../../contexts/authcontext/AuthContext";
 
 const Register = () => {
+    const { createUser, loading } = useContext(AuthContext);
+
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const username = form.username.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(username, email, password);
-    }
 
+        createUser(email, password).then((result) => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        console.log(username, email, password);
+    };
 
     return (
         <div className="max-w-[500px] mx-auto my-10">
