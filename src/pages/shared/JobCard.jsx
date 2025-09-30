@@ -29,7 +29,7 @@ const JobCard = ({job}) => {
                 </div>
                 <div className="text-center">
                     <Link to={`/job/${_id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Apply Now
+                        View Details
                     </Link>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../contexts/authcontext/AuthContext';
 
 const NavBar = () => {
@@ -10,25 +10,25 @@ const NavBar = () => {
             <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
                 <div className="container flex flex-wrap justify-between mx-auto">
                     <div className="flex items-center">
-                        <a href="#" className="text-left">
+                        <Link to="/" className="text-left">
                             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                                 Job Portal
                             </span>
-                        </a>
+                        </Link>
                     </div>
                     <div className="flex items-center">
-                        <a
-                            href="#"
+                        <NavLink
+                            to="/"
                             className="mr-6 text-lg hover:underline dark:text-white"
                         >
                             Home
-                        </a>
-                        <a
-                            href="#"
+                        </NavLink>
+                        <NavLink
+                            to="/jobs"
                             className="mr-6 text-lg hover:underline dark:text-white"
                         >
-                            About
-                        </a>
+                            Jobs
+                        </NavLink>
                         <a
                             href="#"
                             className="mr-6 text-lg hover:underline dark:text-white"
@@ -42,7 +42,10 @@ const NavBar = () => {
                                 <span className="mr-6 text-lg dark:text-white">
                                     Welcome, {user.email}
                                 </span>
-                                <button onClick={logout} className="mr-6 text-lg hover:underline dark:text-white">
+                                <button
+                                    onClick={logout}
+                                    className="mr-6 text-lg hover:underline dark:text-white"
+                                >
                                     Logout
                                 </button>
                             </>
