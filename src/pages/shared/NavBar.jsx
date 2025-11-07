@@ -29,6 +29,14 @@ const NavBar = () => {
                         >
                             Jobs
                         </NavLink>
+                        {user && (
+                            <NavLink
+                                to="/myjobs"
+                                className="mr-6 text-lg hover:underline dark:text-white"
+                            >
+                                My Jobs
+                            </NavLink>
+                            )}
                         <a
                             href="#"
                             className="mr-6 text-lg hover:underline dark:text-white"
